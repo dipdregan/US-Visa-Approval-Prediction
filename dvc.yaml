@@ -1,0 +1,10 @@
+stages:
+  data_ingestion:
+    cmd: python us_visa/components/data_ingestion.py initiate_data_ingestion
+    deps:
+      - us_visa/data_access/usvisa_data.py
+      - us_visa/entity/config_entity.py
+      - us_visa/entity/artifact_entity.py
+      - us_visa/exception/__init__.py
+      - us_visa/logger/__init__.py
+      
