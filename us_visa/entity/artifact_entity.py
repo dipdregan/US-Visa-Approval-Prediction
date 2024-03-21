@@ -14,3 +14,13 @@ class DataValidationArtifact:
     message: str
     drift_report_file_path: str
 
+
+
+
+
+
+
+
+
+
+ 
