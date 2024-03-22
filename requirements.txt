@@ -2,12 +2,14 @@ ipykernel
 pandas
 numpy
 matplotlib
+pymongo[srv]
 plotly
 seaborn
 scipy
 scikit-learn
 imblearn
 xgboost
+python-dotenv
 catboost
 pymongo
 from_root
