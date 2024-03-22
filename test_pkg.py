@@ -1,15 +1,27 @@
 from us_visa.components.data_ingestion import DataIngestion
 from us_visa.entity.config_entity import DataIngestionConfig,DataValidationConfig,\
-      DataTransformationConfig,ModelTrainerConfig,ModelEvaluationConfig
+      DataTransformationConfig,ModelTrainerConfig,ModelEvaluationConfig,ModelPusherConfig
 from us_visa.components.data_validation import DataValidation
 from us_visa.components.model_trainer import ModelTrainer
 from us_visa.components.model_evaluation import ModelEvaluation
+from us_visa.components.model_pusher import ModelPusher
 from us_visa.entity.artifact_entity import DataIngestionArtifact, DataValidationArtifact,\
-    DataTransformationArtifact,ModelTrainerArtifact,ClassificationMetricArtifact
+    DataTransformationArtifact,ModelTrainerArtifact,ClassificationMetricArtifact,ModelEvaluationArtifact
 from us_visa.components.data_transformation import DataTransformation
 
+### =================== Model Pusher testing ===================================
 
-#### ======================== Model Evaluation ====================
+if __name__ == "__main__":
+    config = ModelPusherConfig()
+    artifact = ModelEvaluationArtifact(is_model_accepted=True, 
+                                       changed_accuracy=0.8308339910549855, s3_model_path='model.pkl', 
+                                       trained_model_path='artifact\\03_22_2024_16_21_28\\model_trainer\\trained_model\\model.pkl')
+    obj = ModelPusher(artifact,config)
+    
+
+    obj.initiate_model_pusher()
+
+### ======================== Model Evaluation Testing ====================
 # if __name__ == "__main__":
 #     config = ModelEvaluationConfig()
 #     ingestion =  DataIngestionArtifact(trained_file_path='artifact\\03_22_2024_14_26_23\\data_ingestion\\ingested\\train.csv',
@@ -20,7 +32,7 @@ from us_visa.components.data_transformation import DataTransformation
 #     obj.initiate_model_evaluation()
 
 
-#### ====================== Model trainer testing ==================
+# #### ====================== Model trainer testing ==================
 # if __name__ =="__main__":
 #     config = ModelTrainerConfig()
 #     data_trasnformation_artifact = DataTransformationArtifact(transformed_object_file_path='artifact\\03_22_2024_14_41_33\\data_transformation\\transformed_object\\preprocessing.pkl',
