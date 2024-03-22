@@ -9,12 +9,12 @@ stages:
       size: 1368
     - path: us_visa/entity/artifact_entity.py
       hash: md5
-      md5: 6ae5354b2afa8621608378d0163c6267
-      size: 943
+      md5: 9ca1ce583ba3fc219bb688e22c2828e6
+      size: 427
     - path: us_visa/entity/config_entity.py
       hash: md5
-      md5: d06d9eb6d7d3c1f9a84722576e93a341
-      size: 3154
+      md5: 73a9249eb25e9bd749e502c33cee2751
+      size: 2265
     - path: us_visa/exception/__init__.py
       hash: md5
       md5: 51fb55ead1eb8b2c16e77d3537d80077
@@ -28,12 +28,31 @@ stages:
     deps:
     - path: us_visa/entity/artifact_entity.py
       hash: md5
-      md5: 6ae5354b2afa8621608378d0163c6267
-      size: 943
+      md5: 9ca1ce583ba3fc219bb688e22c2828e6
+      size: 427
     - path: us_visa/entity/config_entity.py
       hash: md5
-      md5: d06d9eb6d7d3c1f9a84722576e93a341
-      size: 3154
+      md5: 73a9249eb25e9bd749e502c33cee2751
+      size: 2265
+    - path: us_visa/exception/__init__.py
+      hash: md5
+      md5: 51fb55ead1eb8b2c16e77d3537d80077
+      size: 762
+    - path: us_visa/logger/__init__.py
+      hash: md5
+      md5: a42f9eecb7082dd113ee2b9305fcdc3b
+      size: 428
+  data_transformation:
+    cmd: python us_visa/components/data_transformation.py initiate_data_transformation
+    deps:
+    - path: us_visa/entity/artifact_entity.py
+      hash: md5
+      md5: 9ca1ce583ba3fc219bb688e22c2828e6
+      size: 427
+    - path: us_visa/entity/config_entity.py
+      hash: md5
+      md5: 73a9249eb25e9bd749e502c33cee2751
+      size: 2265
     - path: us_visa/exception/__init__.py
       hash: md5
       md5: 51fb55ead1eb8b2c16e77d3537d80077

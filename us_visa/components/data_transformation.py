@@ -202,6 +202,7 @@ class DataTransformation:
                     transformed_train_file_path=self.data_transformation_config.transformed_train_file_path,
                     transformed_test_file_path=self.data_transformation_config.transformed_test_file_path
                 )
+                logging.info(data_transformation_artifact)
                 return data_transformation_artifact
             else:
                 raise Exception(self.data_validation_artifact.message)
