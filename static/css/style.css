@@ -1,0 +1,47 @@
+.navbar-light .navbar-brand {
+    color: rgba(0, 0, 255, .9); /* Blue color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 255, 0.5); /* Blue shadow */
+}
+
+h1, label {
+    color: rgb(246, 246, 232); /* Green color */
+    text-shadow: 2px 2px 4px rgb(243, 242, 243); /* Green shadow */
+}
+
+.input {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    border-bottom: 2px solid rgb(223, 231, 223); /* Green border */
+}
+
+.inputText {
+    position: absolute;
+    line-height: 50px;
+    font-size: 24px;
+    transition: .5s;
+    opacity: 0.5;
+}
+
+.focus .inputText {
+    transform: translateY(-30px);
+    font-size: 18px;
+    opacity: 1;
+    color: rgb(250, 251, 252); /* Green color */
+}
+
+.btn_train {
+    width: 100%;
+    background: red;
+    color: #fff;
+    border-radius: 0;
+    border: none;
+    outline: none;
+    height: 50px;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.5); /* Red shadow */
+}
