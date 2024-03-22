@@ -40,3 +40,13 @@ stages:
       - us_visa/exception/__init__.py
       - us_visa/logger/__init__.py
 
+  model_evaluation:
+    cmd: python us_visa/components/model_evaluation.py initiate_model_evaluation
+    deps:
+      - us_visa/cloud_storage/aws_storage.py
+      - us_visa/components/model_evaluation.py
+      - us_visa/configuration/aws_connection.py
+      - us_visa/constants/__init__.py
+      - us_visa/entity/artifact_entity.py
+      - us_visa/entity/config_entity.py
+      - us_visa/entity/s3_estimator.py
