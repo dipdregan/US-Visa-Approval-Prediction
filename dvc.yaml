@@ -2,8 +2,11 @@ stages:
   data_ingestion:
     cmd: python us_visa/components/data_ingestion.py initiate_data_ingestion
     deps:
+      
       - us_visa/data_access/usvisa_data.py
       - us_visa/entity/config_entity.py
+      - us_visa/configuration/mongo_db_connection.py
+      - us_visa/constants/__init__.py
       - us_visa/entity/artifact_entity.py
       - us_visa/exception/__init__.py
       - us_visa/logger/__init__.py
@@ -19,6 +22,19 @@ stages:
   data_transformation:
     cmd: python us_visa/components/data_transformation.py initiate_data_transformation
     deps:
+      - us_visa/constants/__init__.py
+      - us_visa/utils/main_utils.py
+      - us_visa/entity/config_entity.py
+      - us_visa/entity/artifact_entity.py
+      - us_visa/exception/__init__.py
+      - us_visa/logger/__init__.py
+
+  model_traniner:
+    cmd: python us_visa/components/model_trainer.py initiate_model_trainer
+    deps:
+      - us_visa/constants/__init__.py
+      - us_visa/entity/estimator.py
+      - us_visa/utils/main_utils.py
       - us_visa/entity/config_entity.py
       - us_visa/entity/artifact_entity.py
       - us_visa/exception/__init__.py
